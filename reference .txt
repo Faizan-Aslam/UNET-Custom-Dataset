@@ -1,0 +1,35 @@
+Config file---> Setting model parameters and the directory workflow
+memory pinning
+os.path.sep vs os.path.join
+
+
+Creating Custom Segmentation Data 
+
+initialization paths and transforms for the image--> relation to torchvision transformers and Center Crop
+
+len to get length of the dataset
+
+get item to find the tuple of both masks which is in grayscale
+while images as is. and apply transform if in parameters
+
+
+To design the architecture we first have the block of conv--> relu--> conv with increasing channels.
+forward function to link them all.
+
+Then the Encoder class which 
+
+we define the forward function for our encoder on Lines 34-47. The function takes as input an image x as shown on Line 34. On Line 36, we initialize an empty blockOutputs list, storing the intermediate outputs from the blocks of our encoder. Note that this will enable us to later pass these outputs to that decoder where they can be processed with the decoder feature maps.
+
+Understand the architecture.....
+
+
+module has a self ___Cal__ function which uses internally the forward fucntion
+
+
+data split test_train more details
+
+ToPILImage(): it enables us to convert our input images to PIL image format. Note that this is necessary since we used OpenCV to load images in our custom dataset, but PyTorch expects the input image samples to be in PIL format.
+
+Resize(): allows us to resize our images to a particular input dimension (i.e., config.INPUT_IMAGE_HEIGHT, config.INPUT_IMAGE_WIDTH) that our model can accept
+
+ToTensor(): enables us to convert input images to PyTorch tensors and convert the input PIL Image, which is originally in the range from [0, 255], to [0, 1].
